@@ -1,6 +1,6 @@
 import json
 import mysql.connector
-from mysql.connector import errorcode
+# from mysql.connector import errorcode
 
 def get_db_config(filepath):
     f = open(filepath, "r")
@@ -15,7 +15,10 @@ def db_connect(config):
 
         return db
 
-    except errorcode as e:
+    # except errorcode as e:
+    #     print(e)
+
+    except Exception as e:
         print(e)
 
     # finally:

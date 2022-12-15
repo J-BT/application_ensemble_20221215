@@ -23,10 +23,10 @@ def index():
         cursor.execute(query)
         result_select = cursor.fetchall()
 
-        print(result_select)
-
-        return render_template('index.html', configHTML=config, dbOK__=dbOK)
+        return render_template('index.html',
+        configHTML=config, dbOK__=dbOK, HTML_Result=result_select)
     
+
     except mysql.connector.Error as e:
         return render_template('index.html', configHTML=config, error=e)
 

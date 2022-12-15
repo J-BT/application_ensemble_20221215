@@ -32,24 +32,19 @@
                 </tr>
             </thead>
                 <tbody>
-                    
-                    <!-- <tr>
-                        <th scope="row">1</th>
-                        <td id="first_user">Mark</td>
-                        <td id="second_user">Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>@twitter</td>
-                    </tr> -->
+                    {{ HTML_Result }}
+
+                    {% for personne in HTML_Result %}
+
+                        <!-- <p> {{ personne.id }}</p> -->
+                        <tr>
+                            <th scope="row">{{ personne[0] }}</th>
+                            <td id="first_user">{{ personne[1] }}</td>
+                            <td id="second_user">{{ personne[2] }}</td>
+                            <td>{{ personne[3] }}</td>
+                        </tr>
+
+                    {% endfor %}
                 </tbody>
         </table>
 

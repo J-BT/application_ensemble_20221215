@@ -4,21 +4,23 @@ from .db import get_db_config, db_connect
 import mysql.connector
 import requests # <- ne pas installer 
 
+
+# Afficher les valeurs utilisateurs dans le tableau puis db
+# Mettre le cemin absolu de votre config.json
+path = "/ISEN_Projects/Flask_WebScrapping/appli_ensemble/config.json"
+config = get_db_config(path)
+
+myDB = db_connect(config)
+cursor = myDB.cursor()
+dbOK = myDB.is_connected()
+
+
 @app.route('/', methods=["GET", "POST"])   # == @app.route('/index')
 def index():
 
     if request.method == "GET":
 
-        # Afficher les valeurs utilisateurs dans le tableau puis db
-        # Mettre le cemin absolu de votre config.json
-        path = "/ISEN_Projects/Flask_WebScrapping/appli_ensemble/config.json"
-        config = get_db_config(path)
-        
         try:
-            myDB = db_connect(config)
-            cursor = myDB.cursor()
-            dbOK = myDB.is_connected()
-            
             query="""
                 SELECT * FROM `Utilisateur`;
             """
@@ -39,6 +41,7 @@ def index():
         prenom = request.form["prenom"]
         nom = request.form["nom"]
         adresse_mail = request.form["adresse_mail"]
+
 
         
         return redirect(url_for("index"))

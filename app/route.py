@@ -38,29 +38,18 @@ def index():
 
     if request.method == "POST":
 
-        prenom = request.form["prenom"]
-        nom = request.form["nom"]
-        adresse_mail = request.form["adresse_mail"]
+        try:
+            prenom = request.form["prenom"]
+            nom = request.form["nom"]
+            adresse_mail = request.form["adresse_mail"]
 
+            query=f"""
+                INSERT INTO Utilisateur (nom, prenom, adresse_email) VALUES ("{nom}", "{prenom}", "{adresse_mail}");
+            """
+            cursor.execute(query)
+            myDB.commit()
+            
+            return redirect(url_for("index"))
 
-        
-        return redirect(url_for("index"))
-
-
-"""
-On veut une table : Utilisateur
-id
-nom
-prenom
-adresse_email
-
-bdd : 151222
-user : jib
-pwd : 1234
-host : localhost
-table : Utilisateur
-
-SELECT * FROM `Utilisateur`
-
-INSERT INTO Utilisateur (nom, prenom, adresse_email) VALUES ("Jean", "Edouard", "je@gmail.com");
-"""
+        except mysql.connector.Error as e:
+            return redirect(url_for("index"), error=e)

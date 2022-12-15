@@ -5,3 +5,6 @@ HTML Boilerplate
 à la ligne suivante:
 "host" : "mysqlisen"
 vous remplacerez "mysqlisen" par "localhost"
+
+### Tips Terminal
+pip list ou pip freeze : affiche les bibliothèques installées dans le venv 

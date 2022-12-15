@@ -1,0 +1,8 @@
+{
+    "user" : "jib", 
+    "password" : "1234",
+    "host" : "localhost",
+    "database" : "151222",
+    "port" : "3307",
+    "raise_on_warnings" : true
+}

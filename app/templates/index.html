@@ -16,37 +16,41 @@
         <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css' ) }}">
     </head>
     <body>
-        <h1>Tableau</h1>
+        <h1 class="info">Tableau</h1>
 
+        <h3>{{ configHTML }}</h3>
         <table class="table">
             <thead>
-              <tr class="titre">
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
-              </tr>
+                <tr class="titre">
+                    <th scope="col">ID</th>
+                    <th scope="col">Nom</th>
+                    <th scope="col">Prenom</th>
+                    <th scope="col">Adresse email</th>
+                </tr>
             </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
-              </tr>
-            </tbody>
-          </table>
+                <tbody>
+                    
+                    <!-- <tr>
+                        <th scope="row">1</th>
+                        <td id="first_user">Mark</td>
+                        <td id="second_user">Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td colspan="2">Larry the Bird</td>
+                        <td>@twitter</td>
+                    </tr> -->
+                </tbody>
+        </table>
+
+        <h1 class="info">c'etait un tableau Tableau</h1>
 
         <!-- import bootstrap pour le js -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

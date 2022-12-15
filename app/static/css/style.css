@@ -1,5 +1,25 @@
+/*
+    classe = . 
+    id = #
+*/
+
+.info
+{
+    background-color: rgb(153, 165, 42);
+}
+
 .titre
 {
     text-transform: uppercase;
     color:blue;
+}
+
+#first_user
+{
+    color: rgb(179, 52, 73);
+}
+
+#second_user
+{
+    color: rgb(45, 148, 45);
 }
